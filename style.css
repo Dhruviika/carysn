@@ -86,9 +86,10 @@ video {
 }
 
 #page2 {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   z-index: 10;
+  position: relative;
 }
 
 #cursor {
@@ -112,8 +113,96 @@ video {
 
 #scroller {
   white-space: nowrap;
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+#scroller::-webkit-scrollbar {
+  display: none;
+}
+
+#scroller-in {
+  animation-name: scroll;
+  animation-duration: 40s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 #scroller h4 {
   display: inline-block;
+  font-size: 100px;
+  font-weight: 900;
+  font-family: gilroy;
+  margin-right: 30px;
+  -webkit-text-stroke: 2px #fff;
+  color: transparent;
+  transition: all linear 0.3s;
+}
+
+#scroller h4:hover {
+  color: #fff;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+#page2-text {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 100px;
+}
+
+#page2-text h1 {
+  font-size: 60px;
+  font-weight: 900;
+  font-family: "montserrat";
+}
+
+#page2-text p {
+  font-size: 20px;
+  font-weight: 200;
+  width: 60%;
+  text-align: center;
+}
+
+#cards-container {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  position: relative;
+  z-index: 10;
+}
+
+.card {
+  height: 80%;
+  width: 24%;
+  background-color: #fff;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+}
+
+#card1 {
+  background-image: url("https://albionfit.com/cdn/shop/products/369A1127final_5000x.jpg?v=1671851406");
+}
+
+#card2 {
+  background-image: url("https://albionfit.com/cdn/shop/files/044A0086final_5000x.jpg?v=1718897302");
+}
+
+#card3 {
+  background-image: url("https://albionfit.com/cdn/shop/files/369A3443final_261a7718-2a5f-4763-ac52-0b499a483bcc_5000x.jpg?v=1692306212");
 }
