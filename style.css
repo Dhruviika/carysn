@@ -193,6 +193,7 @@ video {
   border-radius: 10px;
   background-size: cover;
   background-position: center;
+  transition: all ease 0.8s;
 }
 
 #card1 {
@@ -205,4 +206,38 @@ video {
 
 #card3 {
   background-image: url("https://albionfit.com/cdn/shop/files/369A3443final_261a7718-2a5f-4763-ac52-0b499a483bcc_5000x.jpg?v=1692306212");
+}
+
+.overlay {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: all ease 0.5s;
+}
+
+.overlay h1 {
+  color: black;
+  font-family: "montserrat";
+}
+
+.overlay p {
+  color: black;
+  font-family: "Poppins";
+  text-align: center;
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+
+.card:hover {
+  width: 34%;
+  height: 100%;
 }
